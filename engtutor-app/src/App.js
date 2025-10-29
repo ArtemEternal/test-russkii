@@ -13,6 +13,8 @@ import inst2 from './inst15.jpg';
 import inst3 from './inst20.jpg';
 import inst4 from './inst4.png';
 
+const server = "https://test-russkii-backend.onrender.com";
+
 function Authorization() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -69,7 +71,7 @@ function Authorization() {
   const submitRegistre = (e) => {
     e.preventDefault();
     console.log({ email, password, role });
-    fetch("http://localhost:3001/register", {
+    fetch("https://test-russkii-backend.onrender.com/register", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -162,7 +164,7 @@ function Authorization() {
 function Enterance() {
   const submitRegister = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3001/login", {
+    fetch("https://test-russkii-backend.onrender.com/login", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -255,7 +257,7 @@ function MovableButton() {
   }, [isDragging]);
 
   const Logout = async () => {
-    await fetch("http://localhost:3001/logout", {
+    await fetch("https://test-russkii-backend.onrender.com/logout", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -294,7 +296,7 @@ console.log(user.id,"usrer")
 
 // рабочий фетч, но временно не нужен
  /* useEffect(() => {
-    fetch("http://localhost:3001/getuser", {
+    fetch("https://test-russkii-backend.onrender.com/getuser", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -326,7 +328,7 @@ function /*desctopview*/ TeacherViewApp({ rooms, setRooms }) {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:3001/getuser", {
+    fetch("https://test-russkii-backend.onrender.com/getuser", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -437,7 +439,7 @@ function TNavbar({rooms, setRooms}) {
   };
 
  /* useEffect(() => {
-    fetch("http://localhost:3001/getrooms", {
+    fetch("https://test-russkii-backend.onrender.com/getrooms", {
       method: "GET",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -454,7 +456,7 @@ function TNavbar({rooms, setRooms}) {
 
   const AddRoom = () => {
     console.log("Sending request with cookie token:", document.cookie);
-    fetch("http://localhost:3001/postroom", {
+    fetch("https://test-russkii-backend.onrender.com/postroom", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -484,7 +486,7 @@ function TNavbar({rooms, setRooms}) {
     setSelectedRoomIdForCH(null);
 
     console.log("Название изменилось, отправляем запрос на сервер");
-    fetch("http://localhost:3001/changern", {
+    fetch("https://test-russkii-backend.onrender.com/changern", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -509,7 +511,7 @@ function TNavbar({rooms, setRooms}) {
   };
 
   const Agree = () => {
-    fetch("http://localhost:3001/delroom", {
+    fetch("https://test-russkii-backend.onrender.com/delroom", {
       method: "DELETE",
       credentials: "include",
       headers: {
@@ -550,7 +552,7 @@ function TNavbar({rooms, setRooms}) {
   };
 
   const AddHomeWork = (roomId) => {
-    fetch("http://localhost:3001/addhomework", {
+    fetch("https://test-russkii-backend.onrender.com/addhomework", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -566,7 +568,7 @@ function TNavbar({rooms, setRooms}) {
 
   const ShowHomeWork = (roomId)  => {
     setSelectedRoomId(roomId);
-    fetch(`http://localhost:3001/gethomework?roomId=${roomId}`, {
+    fetch(`https://test-russkii-backend.onrender.com/gethomework?roomId=${roomId}`, {
       method: "GET",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -593,7 +595,7 @@ const [hui, setHui] = useState(false);
 
   useEffect(() => {
   const roomId = selectedRoomId;
-  fetch(`http://localhost:3001/gethomework?roomId=${roomId}`, {
+  fetch(`https://test-russkii-backend.onrender.com/gethomework?roomId=${roomId}`, {
     method: "GET",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
@@ -613,7 +615,7 @@ const [hui, setHui] = useState(false);
 
   const CreateHomework = (thehomeworkId, roomId) => {
     setStatusCompleted(false);
-fetch(`http://localhost:3001/getexercisesforseparatehomework?thehomeworkId=${thehomeworkId}&roomId=${roomId}`, {
+fetch(`https://test-russkii-backend.onrender.com/getexercisesforseparatehomework?thehomeworkId=${thehomeworkId}&roomId=${roomId}`, {
   method: "GET",
   credentials: "include", 
   headers: {"Content-Type": "application/json"}, 
@@ -700,7 +702,7 @@ const TeacherAddHomework = (roomId, thehomeworkId, exercizeBlock) => {
   setHomeworkSelectedId(thehomeworkId);
 
 
-  fetch(`http://localhost:3001/teacheraddhomework`, {
+  fetch(`https://test-russkii-backend.onrender.com/teacheraddhomework`, {
     method: "POST",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
@@ -889,7 +891,7 @@ const TeacherAddHomework = (roomId, thehomeworkId, exercizeBlock) => {
 //[{email:"", grades:""}]
 
 const checkInfo = (thehomeworkId) => {
-  fetch(`http://localhost:3001/getinfo?thehomeworkid=${thehomeworkId}`,{
+  fetch(`https://test-russkii-backend.onrender.com/getinfo?thehomeworkid=${thehomeworkId}`,{
     method: "GET",
     credentials: "include", 
     headers: {"Content-Type": "application/json"} 
@@ -1131,7 +1133,7 @@ function PresentSimple() {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch("http://localhost:3001/questions");
+        const response = await fetch("https://test-russkii-backend.onrender.com/questions");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -1164,7 +1166,7 @@ function PresentSimple() {
   const handleSubmitAnswer = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/checkAnswer/${questions[currentQuestionIndex].id}`,
+        `https://test-russkii-backend.onrender.com/checkAnswer/${questions[currentQuestionIndex].id}`,
         {
           method: "POST",
           credentials: "include",
@@ -1221,7 +1223,7 @@ function PresentSimple() {
     setIsAnswerChecked(false);
 
     const Getmark = async () => {
-      await fetch("http://localhost:3001/mymark", {
+      await fetch("https://test-russkii-backend.onrender.com/mymark", {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -1317,7 +1319,7 @@ function PresentPerfect() {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch("http://localhost:3001/questions2");
+        const response = await fetch("https://test-russkii-backend.onrender.com/questions2");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -1350,7 +1352,7 @@ function PresentPerfect() {
   const handleSubmitAnswer = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/checkAnswer/${questions[currentQuestionIndex].id}`,
+        `https://test-russkii-backend.onrender.com/checkAnswer/${questions[currentQuestionIndex].id}`,
         {
           method: "POST",
           credentials: "include",
@@ -1407,7 +1409,7 @@ function PresentPerfect() {
     setIsAnswerChecked(false);
 
     const Getmark = async () => {
-      await fetch("http://localhost:3001/mymark", {
+      await fetch("https://test-russkii-backend.onrender.com/mymark", {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -1503,7 +1505,7 @@ function PresentPerfectCont() {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch("http://localhost:3001/questions3");
+        const response = await fetch("https://test-russkii-backend.onrender.com/questions3");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -1536,7 +1538,7 @@ function PresentPerfectCont() {
   const handleSubmitAnswer = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/checkAnswer/${questions[currentQuestionIndex].id}`,
+        `https://test-russkii-backend.onrender.com/checkAnswer/${questions[currentQuestionIndex].id}`,
         {
           method: "POST",
           credentials: "include",
@@ -1593,7 +1595,7 @@ function PresentPerfectCont() {
     setIsAnswerChecked(false);
 
     const Getmark = async () => {
-      await fetch("http://localhost:3001/mymark", {
+      await fetch("https://test-russkii-backend.onrender.com/mymark", {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -1690,7 +1692,7 @@ function PastPerfect() {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch("http://localhost:3001/questions4");
+        const response = await fetch("https://test-russkii-backend.onrender.com/questions4");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -1723,7 +1725,7 @@ function PastPerfect() {
   const handleSubmitAnswer = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/checkAnswer/${questions[currentQuestionIndex].id}`,
+        `https://test-russkii-backend.onrender.com/checkAnswer/${questions[currentQuestionIndex].id}`,
         {
           method: "POST",
           credentials: "include",
@@ -1780,7 +1782,7 @@ function PastPerfect() {
     setIsAnswerChecked(false);
 
     const Getmark = async () => {
-      await fetch("http://localhost:3001/mymark", {
+      await fetch("https://test-russkii-backend.onrender.com/mymark", {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -1912,7 +1914,7 @@ function StNavbar({ user , rooms}) {
     const homeworkId = selectedHomework.id;
     const studentAnswers = answers;
   
-    fetch("http://localhost:3001/checkhomework", {
+    fetch("https://test-russkii-backend.onrender.com/checkhomework", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -2258,7 +2260,7 @@ const AddStudent = () => {
   }
 
  
-  fetch("http://localhost:3001/addstudenttoroom", {
+  fetch("https://test-russkii-backend.onrender.com/addstudenttoroom", {
     method: "POST",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
@@ -2425,7 +2427,7 @@ function App() {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/getrooms", {
+    fetch("https://test-russkii-backend.onrender.com/getrooms", {
       method: "GET",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
