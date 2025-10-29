@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/ArtemEternal/test-russkii/issues"
   },
-  "homepage": "https://github.com/ArtemEternal/test-russkii#readme"
+  "homepage": "https://github.com/ArtemEternal/test-russkii#readme",
+   "dependencies": {
+    "express": "^4.18.2"
+  }
 }
+
+
