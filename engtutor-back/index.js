@@ -57,7 +57,7 @@ app.listen(port, () => {
 
 app.use(
   require("cors")({
-    origin: "http://localhost:3000",
+    origin: "https://test-russkii.onrender.com",
     credentials: true,
   })
 );
