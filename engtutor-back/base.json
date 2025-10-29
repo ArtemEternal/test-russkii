@@ -1,0 +1,70 @@
+{
+  "rooms": [
+    {
+      "id": 1742580082782,
+      "name": "10-й",
+      "students": [
+        1161720050545
+      ],
+      "homework": [
+        {
+          "id": 1742580088260,
+          "name": "homework 378",
+          "exercises": [
+            {
+              "id": 1,
+              "inputs": [
+                {
+                  "type": "radio",
+                  "options": [
+                    "rtdfyguhijop",
+                    "2",
+                    "2",
+                    "2"
+                  ],
+                  "correctAnswer": "rtdfyguhijop"
+                },
+                {
+                  "type": "word",
+                  "correctAnswer": "qwertyui"
+                }
+              ]
+            }
+          ],
+          "status": "completed"
+        },
+        {
+          "id": 1742801374673,
+          "name": "homework 547",
+          "exercises": [],
+          "status": ""
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "email": "teacher@mail.com",
+      "password": "$2b$10$UYfV1FUtiwNJvd.zNOVE/e1OE.QxMgDwwu2fMb7nGMpFgoZY9bTOC",
+      "role": "teacher",
+      "rooms": [
+        1742580082782
+      ],
+      "id": 1161720048820,
+      "token": "9378040b4d83a8c59db195d4"
+    },
+    {
+      "email": "student@mail.com",
+      "password": "$2b$10$/KPNA77KkrNp5DDTmafMwecEqbtNn/jyNLXqp5uO9IE5roi3C6ID6",
+      "role": "student",
+      "rooms": [
+        1742580082782
+      ],
+      "id": 1161720050545,
+      "token": "c9404126a6d26b7d553761ea",
+      "grades": [
+        "homework 378: 100"
+      ]
+    }
+  ]
+}
